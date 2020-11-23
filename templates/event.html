@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Event
+{% endblock %}
+
+{% block content %}
+<div class="container"><font face="cursive">
+<form method="post">
+  {% csrf_token %}
+  <table class="form form-table">
+    {{ form }}
+    </font>
+    <br>
+    <div style="position:relative; left:40px"><font face="cursive"><h2 align=center><strong> Add Event </strong></font></div>
+    <tr><td colspan="2"><a class="btn btn-primary right" href="{% url 'calendarapp:calendar' %}"><font face="cursive"> Cancel </font></a>
+      <button type="submit" class="btn btn-primary right mr-1"><font face="cursive"> Submit </font></button></td>
+    </tr>
+  </table>
+</form>
+</div>
+{% endblock %}

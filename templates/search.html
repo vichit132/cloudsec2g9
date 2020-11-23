@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+{% block content %}
+<br>
+<div class="container">
+    <font face="cursive"><form>
+    <font size="5px"><strong>{{form.name.label}}</strong></font>
+    {{form.name}}
+    <button><font face="cursive"><i class="fa fa-search"></i> Search </font></button><a class="btn btn-primary right" href="{% url 'calendarapp:todolist' %}"><font face="cursive"><i class="fa fa-undo"></i> Back to List </font></a>
+    </form></font>
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+      <th scope="col"><font face="cursive">Date</font></th>
+      <th scope="col"><font face="cursive">Title</font></th>
+      <th scope="col"><font face="cursive">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in data %}
+  <tr>
+      <th scope="row"><font face="cursive">{{post.start_time}}</font></th>
+      <td><font face="cursive">{{post.title}}</font></td>
+      <td><font face="cursive">{{post.description}}</font></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+    </table>
+</div>
+{% endblock %}

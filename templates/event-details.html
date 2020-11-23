@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Event Details
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="clearfix"><font face="cursive">
+            <a class="btn btn-primary right mr-2" href="{% url 'calendarapp:event_delete' event.pk %}"><i class="fa fa-trash"></i> Delete Event </a>
+            <a class="btn btn-primary right mr-2" href="{% url 'calendarapp:event_edit' event.pk %}"><i class="fa fa-edit"></i> Edit Event </a></font>
+        </div>
+        <div class="clearfix"><font face="cursive">
+            <h3><b>Event Name:</b> {{ event.title }}</h3>
+            <p>From <span style="color: gray;">{{ event.start_time }}</span> To <span style="color: gray;">{{ event.end_time }}</span></p>
+            <hr style="border-width:3px; border-color:black">
+            <h4><b>Description:</b></h4>
+            <h5>{{ event.description }}</h5></font< /*<----???*/
+        </div>
+        <hr style="border-width:1px; border-color:black">
+        <a class="btn btn-primary right mr-2" href="{% url 'calendarapp:calendar' %}"><font face="cursive"> Back </font></a>
+    </div>
+{% endblock %}

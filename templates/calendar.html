@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="clearfix"> 
+  <div class="btn-group">
+    <a class="btn btn-primary active left" href="{% url 'calendarapp:calendar' %}"><font face="cursive"><i class="fa fa-table"></i> Calendar </font></a>
+    <a class="btn btn-primary left" href="{% url 'calendarapp:todolist' %}"><font face="cursive"><i class="fa fa-th-list"></i> List </font></a>
+  </div>
+  <a class="btn btn-primary right mr-2" href="{% url 'calendarapp:event_new' %}"><font face="cursive"><i class="fa fa-plus-circle"></i> New Event </font></a>   
+  <div class="btn-group right">
+    <a class="btn btn-primary right" href="{% url 'calendarapp:calendar' %}?{{ prev_month }}"><font face="cursive"><i class="fa fa-angle-double-left"></i> Previous Month </font></a>
+    <a class="btn btn-primary right mr-2" href="{% url 'calendarapp:calendar' %}?{{ next_month }} "><font face="cursive"> Next Month <i class="fa fa-angle-double-right"></i></font></a>
+  </div><p></p>
+<div class="calendar">
+    {{ calendar }}
+</div>
+{% endblock %}

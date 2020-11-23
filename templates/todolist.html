@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+{% block content %}
+<div class="clearfix">  
+  <div class="btn-group">
+    <a class="btn btn-primary left" href="{% url 'calendarapp:calendar' %}"><font face="cursive"><i class="fa fa-table"></i> Calendar </font></a>
+    <a class="btn btn-primary active left" href="{% url 'calendarapp:todolist' %}"><font face="cursive"><i class="fa fa-th-list"></i> List </font></a>  
+  </div>
+	<a class="btn btn-primary right mr-2" href="search"><font face="cursive"><i class="fa fa-search"></i> Search </font></a>
+</div>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+      <th scope="col"><font face="cursive">Date</font></th>
+      <th scope="col"><font face="cursive">Title</font></th>
+      <th scope="col"><font face="cursive">Description</font></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in posts %}
+  <tr>
+      <th scope="row"><font face="cursive">{{post.start_time}}</font></th>
+      <td><font face="cursive">{{post.title}}</font<</td>
+      <td><font face="cursive">{{post.description}}<font></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+    </table>
+</div>
+{% endblock %}

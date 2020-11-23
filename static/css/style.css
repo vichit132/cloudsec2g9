@@ -1,0 +1,89 @@
+.calendar {
+    /*calendar size n task size*/
+    width: 98%;
+    margin: auto;
+    font-size: 13px;
+    font-family: cursive;
+}
+
+.calendar tr,
+.calendar td {
+    /*border of calendar*/
+    border: 2px solid #4b2e8f;
+    font-family: cursive;
+}
+
+.calendar th {
+    /*date*/
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    background-color: salmon;
+    font-family: cursive;
+}
+
+.calendar td {
+    /*position of date*/
+    width: 200px;
+    height: 100px;
+    padding: 10px 0px 0px 5px;
+}
+
+.month {
+    font-size: 25px;
+    font-family: cursive;
+}
+
+.date {
+    /*size of date*/
+    font-size: 16px;
+    padding: 0;
+    font-family: cursive;
+}
+
+ul {
+    /*size of each date's room*/
+    height: 80%;
+    padding: 0px 0px 0px 0px;
+}
+
+a {
+    /* color of task */
+    color: #000000;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.btn {
+    /* about button */
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    box-shadow: 0 0 0 0;
+}
+
+.clearfix {
+    margin: 15px;
+}
+
+.form {
+    margin: auto;
+}
+
+.form input,
+.form select,
+.form textarea {
+    /* text box */
+    border-radius: 5px;
+    border: 2px solid #ad8500;
+    outline: none;
+    background: none;
+    padding: 5px;
+    width: 100%;
+}
