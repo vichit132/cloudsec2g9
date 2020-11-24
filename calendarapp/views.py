@@ -73,7 +73,7 @@ def create_event(request):
         
         send_mail(
             title,
-            dateformat+' To '+enddateformat+'\nDetail:'+description,
+            'From '+dateformat+' To '+enddateformat+'\nDetail:'+description,
             'MyToDoListSec2@gmail.com',
             [request.user.email],
         )

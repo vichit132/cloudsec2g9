@@ -20,8 +20,12 @@ class Calendar(HTMLCalendar):
 		events_per_day = events.filter(start_time__date__lte=xxx,end_time__date__gte=xxx, user=self.user)
 		d = ''		
 		for event in events_per_day:
-			if event.id%9==0:
+			if event.id%13==0:
 				tcor='Tometo'
+			elif event.id%11==0:
+				tcor='Indigo'
+			elif event.id%9==0:
+				tcor='Chartreuse'
 			elif event.id%8==0:
 				tcor='Orange'
 			elif event.id%7==0:
