@@ -15,9 +15,9 @@
 	{% endfor%}
     </div>
     {%endif%}
-    <form action = "addForm" method="post">
+    <form action = "addForm" method="post"><font face="cursive">
     {% csrf_token %}
-     <h1> Register </h1>
+     <h1><font face="cursive"> Register </font></h1>
     <div class = "form-group">
         <label for ="">Username</label>
         <input type="text" name="username" placeholder="Enter your Username" required="" id="username" />
@@ -42,9 +42,10 @@
         <label for ="">Re-Password</label>
         <input type="password" name="repassword" placeholder="Enter your Password" required="" id="password" />
     </div>
-        <input type = "submit" value="Singup" class="btn btn-primary">
+        <input type = "submit" value="Signup" class="btn btn-primary">
     <br><br>
     <a href="{% url 'signup' %}">back to login</a>
+    </font>
     </form>
 
 </div>

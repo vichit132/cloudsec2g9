@@ -69,12 +69,12 @@ def create_event(request):
         dateformat = date[2]+'/'+date[1]+'/'+date[0]+' '+time[0]+':'+time[1]
         enddate = str(end_time).split(' ')[0].split('-')
         endtime = str(end_time).split(' ')[1].split(':')
-        enddateformat = date[2]+'/'+date[1]+'/'+date[0]+' '+time[0]+':'+time[1]
+        enddateformat = enddate[2]+'/'+enddate[1]+'/'+enddate[0]+' '+endtime[0]+':'+endtime[1]
         
         send_mail(
             title,
-            dateformat+' '+enddateformat+' '+description,
-            'rawipas2003@gmail.com',
+            dateformat+' To '+enddateformat+'\nDetail:'+description,
+            'MyToDoListSec2@gmail.com',
             [request.user.email],
         )
         Event.objects.get_or_create(
@@ -95,7 +95,6 @@ class EventEdit(generic.UpdateView):
 @login_required(login_url='signup')
 def event_details(request, event_id):
     event = Event.objects.get(id=event_id)
-    eventmember = EventMember.objects.filter(event=event)
     context = {
         'event': event
     }
@@ -121,7 +120,5 @@ def search(request):
 
 def Event_Delete(request, id):
         Event.objects.get(id=id).delete()
-
-        data = Event.objects.filter()[:10]
-        
+                
         return redirect('/')

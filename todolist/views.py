@@ -42,7 +42,7 @@ def forgetpassword (request):
             send_mail(
             'ลืมรหัสผ่าน',
             'รหัสผ่านของคุณถูกเปลี่ยนเป็น'+' '+result_str,
-            'rawipas2003@gmail.com',
+            'MyToDoListSec2@gmail.com',
             [checkemail.email],
             )
             messages.info(request,'password ใหม่ได้ถูกส่งไปยัง email แล้ว')
@@ -117,7 +117,7 @@ def newpassword (request):
             send_mail(
             'เปลี่ยนรหัสผ่าน',
             'รหัสผ่านของคุณถูกเปลี่ยนเป็น'+' '+password,
-            'rawipas2003@gmail.com',
+            'MyToDoListSec2@gmail.com',
             [checkemail2.email],
             )
             messages.info(request,'password ของคุณถูกเปลี่ยนเรียบร้อย')
