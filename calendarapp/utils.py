@@ -23,7 +23,7 @@ class Calendar(HTMLCalendar):
 			if event.id%13==0:
 				tcor='Tometo'
 			elif event.id%11==0:
-				tcor='Indigo'
+				tcor='Gold'
 			elif event.id%9==0:
 				tcor='Chartreuse'
 			elif event.id%8==0:
@@ -33,16 +33,16 @@ class Calendar(HTMLCalendar):
 			elif event.id%6==0:
 				tcor='MediumSeaGreen'
 			elif event.id%5==0:
-				tcor='SlateBlue'
+				tcor='deeppink'
 			elif event.id%4==0:
 				tcor='LawnGreen'
 			elif event.id%3==0:
 				tcor='Red'
 			elif event.id%2==0:
-				tcor='DarkTurquoise'				
+				tcor='deepskyblue'				
 			else:
-				tcor='Violet'			
-			d += f'<div style="background-color:DarkTurquoise; width:103%; position:relative;background-color:{tcor}">{event.get_html_url} </div>'
+				tcor='mediumorchid'			
+			d += f'<div style="background-color:deepskyblue; width:103%; position:relative;background-color:{tcor}">{event.get_html_url} </div>'
 		
 		if day != 0:
 			return f"<td><span class='date'>{day}</span><ul style='width:100%; margin-left:-5px;'> {d} </ul></td>"

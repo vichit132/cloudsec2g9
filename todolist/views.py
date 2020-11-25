@@ -113,7 +113,6 @@ def newpassword (request):
             checkemail2=User.objects.get(email=request.POST['email'])
             checkemail2.set_password(password)
             checkemail2.save()
-            # print(password)
             send_mail(
             'เปลี่ยนรหัสผ่าน',
             'รหัสผ่านของคุณถูกเปลี่ยนเป็น'+' '+password,
